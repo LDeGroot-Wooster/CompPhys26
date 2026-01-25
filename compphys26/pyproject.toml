@@ -8,6 +8,7 @@ dependencies = [
   "matplotlib",
   "pip>=25.3",
   "pytest>=9.0.2",
+  "nbmake>=1.5.5",
 ]
 
 [build-system]
