@@ -2,5 +2,5 @@
 *.DS_Store
 
 # package files
-compphys26.egg-info/*
+package/compphys26.egg-info/*
 
