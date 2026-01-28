@@ -1,0 +1,6 @@
+*.pyc
+*.DS_Store
+
+# package files
+compphys26/compphys26.egg-info/*
+
