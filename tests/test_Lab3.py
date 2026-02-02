@@ -58,7 +58,6 @@ def test_first_snippet(tb):
     assert (output_list[-1]) == 's'
 
 
-
 def test_second_snippet(tb):
     tb.execute_cell('Snippet2')
     
@@ -75,4 +74,5 @@ def test_fourth_snippet(tb):
     magnitude = tb.ref("mag")
     assert round(magnitude(38.5),3) == 21.996
 
+def Script1
 
