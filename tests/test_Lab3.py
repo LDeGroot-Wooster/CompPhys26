@@ -60,12 +60,18 @@ def test_first_snippet(tb):
 
 def test_second_snippet(tb):
     tb.execute_cell('Snippet2')
-    
-    
+    # assert the output 
+    output_list = out_val["outputs"][0]["text"].splitlines()
+    assert len(output_list) == 1
+    # which one of these is correct? or neither? 
+    assert isinstance(output_list[0], numpy.ndarray)
+    assert type(output_list[0]) == numpy.ndarray 
+    # <class 'numpy.ndarray'>
 
 def test_third_snippet(tb):
     tb.execute_cell('Snippet3')
-
+    output_list = out_val["outputs"][0]["text"].splitlines()
+    assert len(output_list) == 25
 
 
 def test_fourth_snippet(tb):
@@ -74,5 +80,28 @@ def test_fourth_snippet(tb):
     magnitude = tb.ref("mag")
     assert round(magnitude(38.5),3) == 21.996
 
-def Script1
+def test_Script1(tb): 
+    tb.execute_cell('Script1')
+    # assert the output 
+    output_list = out_val["outputs"][0]["text"].splitlines()
+    assert len(output_list) == 2
+    assert (output_list[-1][-1]) == 11
+
+
+def test_Script2(tb): 
+    tb.execute_cell('Script2')
+    #result = tb.execute_cell()
+    #odd_sum = tb.ref("odd_sum")
+    #assert odd_sum(1000000)[0] == 250000000000
+    output_list = out_val["outputs"][0]["text"].splitlines()
+    assert len(output_list) == 2
+
+
+def test_Script3(tb): 
+    tb.execute_cell('Script3')
+    output_list = out_val["outputs"][0]["text"].splitlines()
+    assert round((output_list[-1]),3) == 5.069
+    assert round((output_list[-2]),3) == 5.069
+
+
 
